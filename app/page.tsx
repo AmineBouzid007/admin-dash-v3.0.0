@@ -3,6 +3,11 @@
 import { useState } from "react";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { MainContent } from "@/components/dashboard/main-content";
+import { redirect } from "next/navigation";
+
+export default function RootPage() {
+  redirect("/admin/login");
+}
 
 export type Section =
   | "overview"
