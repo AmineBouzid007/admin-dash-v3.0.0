@@ -192,13 +192,44 @@ export function CustomRequestsContent() {
                     <p className="bg-muted rounded-lg p-3">{selected.notes}</p>
                   </div>
                 )}
-                {selected.image_url && (
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Reference image</p>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={selected.image_url} alt="Reference" className="rounded-lg max-h-56 object-cover" />
-                  </div>
-                )}
+                {selected.image_url ? (
+  <div className="space-y-3">
+    <p className="text-xs text-muted-foreground">
+      Reference image
+    </p>
+
+    <img
+      src={selected.image_url}
+      alt="Customer reference"
+      className="rounded-lg max-h-72 w-full object-contain border"
+    />
+
+    <div className="flex gap-2">
+      <Button asChild variant="outline" size="sm">
+        <a
+          href={selected.image_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View full image
+        </a>
+      </Button>
+
+      <Button asChild variant="outline" size="sm">
+        <a
+          href={selected.image_url}
+          download
+        >
+          Download image
+        </a>
+      </Button>
+    </div>
+  </div>
+) : (
+  <div className="text-sm text-muted-foreground">
+    No reference image uploaded.
+  </div>
+)}
                 <div className="flex items-end gap-2 pt-2 border-t border-border">
                   <div className="flex-1">
                     <p className="text-xs text-muted-foreground mb-1">Estimated price (TND)</p>
