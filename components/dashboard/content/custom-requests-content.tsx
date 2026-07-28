@@ -193,43 +193,68 @@ export function CustomRequestsContent() {
                   </div>
                 )}
                 {selected.image_url ? (
-  <div className="space-y-3">
-    <p className="text-xs text-muted-foreground">
-      Reference image
-    </p>
-
-    <img
-      src={selected.image_url}
-      alt="Customer reference"
-      className="rounded-lg max-h-72 w-full object-contain border"
-    />
-
-    <div className="flex gap-2">
-      <Button asChild variant="outline" size="sm">
-        <a
-          href={selected.image_url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View full image
-        </a>
-      </Button>
-
-      <Button asChild variant="outline" size="sm">
-        <a
-          href={selected.image_url}
-          download
-        >
-          Download image
-        </a>
-      </Button>
-    </div>
-  </div>
-) : (
-  <div className="text-sm text-muted-foreground">
-    No reference image uploaded.
-  </div>
-)}
+                  <div className="space-y-3">
+                    <p className="text-xs text-muted-foreground">
+                      Reference image
+                    </p>
+                
+                    <img
+                      src={selected.image_url}
+                      alt="Customer reference"
+                      className="rounded-lg max-h-72 w-full object-contain border"
+                    />
+                
+                    <div className="flex gap-2">
+                      <Button asChild variant="outline" size="sm">
+                        <a
+                          href={selected.image_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View full image
+                        </a>
+                      </Button>
+                
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={async () => {
+                          try {
+                            const response = await fetch(selected.image_url);
+                
+                            if (!response.ok) {
+                              throw new Error("Failed to fetch image");
+                            }
+                
+                            const blob = await response.blob();
+                
+                            const blobUrl = window.URL.createObjectURL(blob);
+                
+                            const link = document.createElement("a");
+                            link.href = blobUrl;
+                            link.download = `custom-request-${selected.name || "image"}.jpg`;
+                
+                            document.body.appendChild(link);
+                            link.click();
+                
+                            document.body.removeChild(link);
+                            window.URL.revokeObjectURL(blobUrl);
+                
+                          } catch (error) {
+                            console.error("DOWNLOAD IMAGE ERROR:", error);
+                            toast.error("Failed to download image");
+                          }
+                        }}
+                      >
+                        Download image
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-sm text-muted-foreground">
+                    No reference image uploaded.
+                  </div>
+                )}
                 <div className="flex items-end gap-2 pt-2 border-t border-border">
                   <div className="flex-1">
                     <p className="text-xs text-muted-foreground mb-1">Estimated price (TND)</p>
