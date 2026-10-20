@@ -203,10 +203,10 @@ export function OverviewContent() {
           <div className="h-[260px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={revenueData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.005 250)" />
-                <XAxis dataKey="date" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <YAxis tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="date" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <YAxis tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                 <Line type="monotone" dataKey="revenue" stroke="oklch(0.68 0.2 40)" strokeWidth={2.5} dot={false} />
               </LineChart>
             </ResponsiveContainer>
@@ -228,7 +228,7 @@ export function OverviewContent() {
                         <Cell key={entry.status} fill={statusColors[entry.status]} />
                       ))}
                     </Pie>
-                    <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                    <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -264,10 +264,10 @@ export function OverviewContent() {
                     <stop offset="95%" stopColor="oklch(0.68 0.2 40)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.005 250)" />
-                <XAxis dataKey="date" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <YAxis tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} allowDecimals={false} />
-                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="date" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <YAxis tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} allowDecimals={false} />
+                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                 <Area type="monotone" dataKey="orders" stroke="oklch(0.68 0.2 40)" strokeWidth={2} fill="url(#ordersGradient)" />
               </AreaChart>
             </ResponsiveContainer>

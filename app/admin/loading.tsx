@@ -5,17 +5,15 @@ export default function AdminLoading() {
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="h-28 rounded-2xl animate-pulse"
-            style={{ backgroundColor: "#1f1f1f" }}
+            className="h-28 rounded-2xl animate-pulse bg-muted"
           />
         ))}
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
         <div
-          className="xl:col-span-2 h-72 rounded-2xl animate-pulse"
-          style={{ backgroundColor: "#1f1f1f" }}
+          className="xl:col-span-2 h-72 rounded-2xl animate-pulse bg-muted"
         />
-        <div className="h-72 rounded-2xl animate-pulse" style={{ backgroundColor: "#1f1f1f" }} />
+        <div className="h-72 rounded-2xl animate-pulse bg-muted" />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { StikkyLogo } from "@/components/brand/stikky-logo";
 import type { Section } from "@/app/page";
 import {
   LayoutDashboard,
@@ -11,7 +12,6 @@ import {
   Palette,
   BarChart3,
   Settings,
-  Sticker,
   Wand2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -66,11 +66,9 @@ export function AppSidebar({ activeSection, onSectionChange }: AppSidebarProps) 
     <aside className="w-[260px] h-screen bg-card border-r border-border flex flex-col shrink-0">
       {/* Logo */}
       <div className="h-16 px-5 flex items-center gap-3 border-b border-border">
-        <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
-          <Sticker className="w-5 h-5 text-primary-foreground" />
-        </div>
+        <StikkyLogo variant="icon" className="h-9 text-foreground" />
         <span className="font-semibold text-foreground text-[15px] tracking-tight">
-          Stikky
+          Admin
         </span>
       </div>
 

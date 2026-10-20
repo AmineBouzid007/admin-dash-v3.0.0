@@ -114,10 +114,10 @@ export function AnalyticsContent() {
           <div className="h-[220px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={revenueData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.005 250)" />
-                <XAxis dataKey="date" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <YAxis tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="date" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <YAxis tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                 <Bar dataKey="revenue" fill="oklch(0.68 0.2 40)" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -130,10 +130,10 @@ export function AnalyticsContent() {
           <div className="h-[220px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={ordersData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.005 250)" />
-                <XAxis dataKey="date" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} />
-                <YAxis tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} axisLine={{ stroke: "oklch(0.92 0.005 250)" }} allowDecimals={false} />
-                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="date" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} />
+                <YAxis tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} axisLine={{ stroke: "var(--border)" }} allowDecimals={false} />
+                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                 <Line type="monotone" dataKey="orders" stroke="oklch(0.6 0.15 250)" strokeWidth={2.5} dot={{ r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
@@ -150,10 +150,10 @@ export function AnalyticsContent() {
           <div className="h-[240px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={categoryPerf} layout="vertical" margin={{ left: 24 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.005 250)" />
-                <XAxis type="number" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} />
-                <YAxis type="category" dataKey="category" tick={{ fill: "oklch(0.55 0.01 250)", fontSize: 12 }} width={100} />
-                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid oklch(0.92 0.005 250)", borderRadius: "12px" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis type="number" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} />
+                <YAxis type="category" dataKey="category" tick={{ fill: "var(--muted-foreground)", fontSize: 12 }} width={100} />
+                <Tooltip contentStyle={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px" }} />
                 <Bar dataKey="revenue" fill="oklch(0.6 0.15 250)" radius={[0, 6, 6, 0]} />
               </BarChart>
             </ResponsiveContainer>
